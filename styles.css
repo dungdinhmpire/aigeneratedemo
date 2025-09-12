@@ -875,6 +875,12 @@ img {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+@media screen and (max-width: 1024px) {
+    .project-card__content {
+        width: 100%;
+    }
+}
+
 .project-card__content:hover {
     transform: translateY(-2px);
 }
