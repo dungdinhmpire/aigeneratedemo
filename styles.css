@@ -589,7 +589,7 @@ img {
     font-size: 48px;
     font-weight: 500;
     line-height: 1.1;
-    text-align: left;
+    text-align: l;
     margin-bottom: 48px;
 }
 
@@ -918,6 +918,8 @@ img {
 .project-card__image {
     flex: 1;
     border-radius: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .project-card__image img {
