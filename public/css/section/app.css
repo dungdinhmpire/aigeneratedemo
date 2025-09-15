@@ -1,0 +1,14 @@
+@import url('./fonts.css');
+@import url('./variables.css');
+
+@import url('./base.css');
+@import url('./nav.css');
+@import url('./hero.css');
+@import url('./section-common.css');
+@import url('./clients.css');
+@import url('./services.css');
+@import url('./testimonials.css');
+@import url('./projects.css');
+@import url('./blog.css');
+@import url('./cta.css');
+@import url('./footer.css');

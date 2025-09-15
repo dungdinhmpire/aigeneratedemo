@@ -1,0 +1,94 @@
+:root {
+    /* ================= Colors ================= */
+    --color-text-primary: #0C0C0C;
+    --color-bg-white: #FFFFFF;
+    --color-bg-primary: #FFF8BA;
+    --color-bg-secondary: #EEF5E4;
+    --color-bg-dark: #101010;
+    --color-bg-light-gray: #F4F4F4;
+    --color-bg-light-grey: #efefef;
+    /* alias */
+    --color-text-gray: #585858;
+    --color-text-light-gray: #F5F5F5;
+    --color-green: #71EA07;
+    --color-blue: #426181;
+    --color-red: #B83D52;
+    --color-dark-gray: #1A1A1A;
+
+    --gradient-brand: linear-gradient(90deg, rgba(34, 8, 18, 1) 0%, rgba(140, 23, 63, 1) 100%);
+    --gradient-section-bg: linear-gradient(135deg, rgba(14, 14, 14, 1) 0%, rgba(136, 23, 65, 1) 67%, rgba(204, 32, 46, 1) 100%);
+
+    /* ================= Typography ================= */
+    --font-family-primary: "Neue Haas Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-family-alt: "Neue Haas Grotesk Text Pro VN", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    /* Hero */
+    --font-hero-title-family: var(--font-family-primary);
+    --font-hero-title-weight: 500;
+    --font-hero-title-size: 72px;
+    --font-hero-title-line-height: 1.1;
+
+    --font-hero-desc-family: var(--font-family-primary);
+    --font-hero-desc-weight: 500;
+    --font-hero-desc-size: 20px;
+    --font-hero-desc-line-height: 1.3;
+    --font-hero-desc-letter-spacing: 0.4px;
+
+    /* Features */
+    --font-feature-title-size: 20px;
+    --font-feature-desc-size: 12px;
+
+    /* Stats */
+    --font-stats-family: var(--font-family-primary);
+    --font-stats-weight: 600;
+    --font-stats-size: 24px;
+    --font-stats-line-height: 1.3;
+
+    /* Section titles */
+    --font-section-title-size: 48px;
+    --font-section-title-line-height: 1.15;
+    --font-section-title-letter-spacing: 2%;
+
+    /* Steps */
+    --font-step-title-size: 24px;
+    --font-step-title-line-height: 1.243;
+    --font-step-desc-size: 16px;
+    --font-step-desc-line-height: 1.35;
+    --font-step-number-size: 24px;
+    --font-step-number-line-height: 1.243;
+
+    /* ================= Border Radius ================= */
+    --radius-button: 8px;
+    --radius-card: 12px;
+    --radius-feature: 9.696969032287598px;
+    --radius-section: 20px;
+    --radius-hero-img-a: 16px;
+    --radius-hero-img-b: 20px;
+    --radius-animation-sales: 10.944127082824707px;
+    --radius-testimonial: 10.095717430114746px;
+    --radius-step-number: 24px;
+    --radius-image: 20px;
+
+    /* ================= Spacing ================= */
+    --gap-xxl: 160px;
+    --gap-lg: 40px;
+    --gap-section: 160px;
+    --gap-features: 28px;
+    --gap-feature-content: 24px;
+    --gap-content: 52px;
+    --gap-steps: 90px;
+
+    --padding-section: 180px 12px 160px 12px;
+    --padding-feature: 40px 48px;
+    --padding-step: 24px 0px;
+
+    /* ================= Layout ================= */
+    --max-width: 1512px;
+
+    /* ================= Breakpoints ================= */
+    --bp-sm: 640px;
+    --bp-md: 768px;
+    --bp-lg: 1024px;
+    --bp-xl: 1280px;
+    --bp-2xl: 1440px;
+}

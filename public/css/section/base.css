@@ -1,0 +1,40 @@
+/* Reset and Base Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-hero-desc-family);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-white);
+  overflow-x: hidden;
+}
+
+/* Apply Neue Haas Display font to all elements */
+* { font-family: "Neue Haas Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+img { max-width: 100%; height: auto; }
+
+/* Utility Classes */
+.container { max-width: 1350px; margin: 0 auto; padding: 0 12px; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .nav, .floating-card, .hero__bg-image { display: none; }
+  .hero__mobile-slider { display: block; }
+}

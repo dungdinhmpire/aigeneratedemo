@@ -1,0 +1,39 @@
+/* Clients Section */
+.clients {
+    padding: 80px 0;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+
+.clients__slider {
+    position: relative;
+    margin-top: 48px;
+}
+
+.clients__track {
+    display: flex;
+    align-items: center;
+    gap: 74px;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+}
+
+.clients__logo {
+    height: 38px;
+    width: auto;
+    min-width: 120px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
