@@ -80,10 +80,10 @@
 
             <ul class="nav__menu">
                 <li class="nav__item">
-                    <a href="/" class="nav__link">Home</a>
+                    <a href="index.html" class="nav__link">Home</a>
                 </li>
                 <li class="nav__item">
-                    <a href="/services.html" class="nav__link">Services</a>
+                    <a href="service.html" class="nav__link">Services</a>
                 </li>
                 <li class="nav__item">
                     <a href="#services" class="nav__link">MVP Development</a>
@@ -114,13 +114,13 @@
         <div class="nav__mobile-menu" id="mobileMenu">
             <ul class="nav__mobile-list">
                 <li class="nav__mobile-item">
-                    <a href="#home" class="nav__mobile-link">Home</a>
+                    <a href="index.html" class="nav__mobile-link">Home</a>
                 </li>
                 <li class="nav__mobile-item">
-                    <a href="#services" class="nav__mobile-link">Services</a>
+                    <a href="service.html" class="nav__mobile-link">Services</a>
                 </li>
                 <li class="nav__mobile-item">
-                    <a href="#projects" class="nav__mobile-link">Case studies</a>
+                    <a href="case-study.html" class="nav__mobile-link">Case studies</a>
                 </li>
                 <li class="nav__mobile-item">
                     <a href="#company" class="nav__mobile-link">Blog</a>
@@ -342,7 +342,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer" data-figma-name="Footer">
+    <footer id="company" class="footer" data-figma-name="Footer">
         <div class="container">
             <div class="footer__main">
                 <div class="footer__about">
@@ -357,22 +357,22 @@
                 <div class="footer__section">
                     <h3 class="footer__section-title">Services</h3>
                     <nav class="footer__links">
-                        <a href="#" class="footer__link">Software Engineering</a>
-                        <a href="#" class="footer__link">Creative Design</a>
-                        <a href="#" class="footer__link">Data Analytics</a>
-                        <a href="#" class="footer__link">MVP Development</a>
-                        <a href="#" class="footer__link">Software Custom Development</a>
-                        <a href="#" class="footer__link">Cloud Migration</a>
+                        <a href="#services" class="footer__link">Software Engineering</a>
+                        <a href="#services" class="footer__link">Creative Design</a>
+                        <a href="#services" class="footer__link">Data Analytics</a>
+                        <a href="#services" class="footer__link">MVP Development</a>
+                        <a href="#services" class="footer__link">Software Custom Development</a>
+                        <a href="#services" class="footer__link">Cloud Migration</a>
                     </nav>
                 </div>
 
                 <div class="footer__section">
                     <h3 class="footer__section-title">Company</h3>
                     <nav class="footer__links">
-                        <a href="#" class="footer__link">Careers</a>
-                        <a href="#" class="footer__link">Contact us</a>
-                        <a href="#" class="footer__link">Blogs</a>
-                        <a href="#" class="footer__link">Life of Mpire</a>
+                        <a href="#careers" class="footer__link">Careers</a>
+                        <a href="#contact" class="footer__link">Contact us</a>
+                        <a href="#blog" class="footer__link">Blogs</a>
+                        <a href="#life" class="footer__link">Life of Mpire</a>
                     </nav>
                 </div>
 
@@ -381,19 +381,22 @@
                         <h3 class="footer__newsletter-title">Keep up to date</h3>
                         <p class="footer__newsletter-text">Subscribe, get our discount and latest updates</p>
                     </div>
-                    <form class="footer__newsletter-form" id="newsletterForm">
+                    <div class="footer__newsletter-form" id="newsletterForm">
                         <input type="email" class="footer__input" placeholder="Your email address" required aria-label="Email address">
                         <button type="submit" class="footer__submit">Submit</button>
                         <p class="footer__disclaimer">By clicking Subscribe, you agreed with our terms and conditions</p>
-                    </form>
+                    </div>
                 </div>
             </div>
 
             <div class="footer__bottom">
-                <div class="footer__logo">M</div>
+                <svg class="footer__logo" width="36" height="29" viewBox="0 0 36 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8538 10.4103L16.7046 14.5515L17.8538 15.7405L18.8331 14.5515L17.8538 10.4103ZM4.03047 0.817657L13.354 11.025L14.05 8.03236H11.6382L12.5042 3.97207H20.8079L22.4104 10.8956L31.5801 1.09266L35.5135 5.32281L29.662 28.528L26.2142 24.9368L30.4875 8.13751L23.5434 15.6434L25.0893 22.3H20.7998L19.95 19.364L17.7891 21.6368L15.6039 19.3074L14.835 22.211H10.4727L12.229 15.7L5.29303 8.35589L9.37205 25.0177L5.9243 28.8757L0 5.26619L4.04666 0.80957L4.03047 0.817657Z" fill="white" />
+                </svg>
+
                 <div class="footer__legal">
-                    <a href="#" class="footer__legal-link">Privacy Policy</a>
-                    <a href="#" class="footer__legal-link">Cookies</a>
+                    <a href="#privacy" class="footer__legal-link">Privacy Policy</a>
+                    <a href="#cookies" class="footer__legal-link">Cookies</a>
                     <span class="footer__legal-link">© 2025 Mpire Agency. All Rights Reserved</span>
                 </div>
             </div>
