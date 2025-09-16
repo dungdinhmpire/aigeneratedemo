@@ -1,608 +1,1246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Working Process & FAQ</title>
+    <title>Case Studies - Mpire Agency</title>
+    <meta name="description" content="Explore our best projects and case studies. See how Mpire Agency delivers exceptional results in software engineering, data analytics, MVP development, and creative design.">
+
     <style>
+        /* CSS Variables - Design Tokens */
+        :root {
+            /* Colors */
+            --color-text-primary: #0C0C0C;
+            --color-text-black: #000000;
+            --color-bg-white: #FFFFFF;
+            --color-bg-light-gray: #EFEFEF;
+            --color-bg-dark: #1A1A1A;
+            --color-bg-accent: #426181;
+            --color-text-gray: #F5F5F5;
+            --color-accent-green: #71EA07;
+            --gradient-brand: linear-gradient(90deg, rgba(34, 8, 18, 1) 0%, rgba(140, 23, 63, 1) 100%);
+
+            /* Typography */
+            --font-primary: "Neue Haas Grotesk Text Pro VN", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-secondary: "Haskoy", Georgia, serif;
+
+            /* Layout */
+            --container-max-width: 1512px;
+            --section-gap: 160px;
+            --card-gap: 48px;
+            --filter-gap: 12px;
+
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 20px;
+
+            /* Responsive Breakpoints */
+            --bp-sm: 640px;
+            --bp-md: 768px;
+            --bp-lg: 1024px;
+            --bp-xl: 1280px;
+        }
+
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Neue Haas Grotesk Text Pro VN', Arial, sans-serif;
-            min-height: 100vh;
-            padding: 160px 0;
+            font-family: var(--font-primary);
+            line-height: 1.5;
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-white);
+            overflow-x: hidden;
         }
 
-        /* WORKING PROCESS SECTION */
-        .working-process {
-            margin-bottom: 160px;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
+        /* Container */
         .container {
-            max-width: 1200px;
+            max-width: var(--container-max-width);
             margin: 0 auto;
-            padding: 0 36px;
+            padding: 0 12px;
         }
 
-        .title {
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(9px);
+            padding: 8px 12px;
+            transition: all 0.3s ease;
+        }
+
+        .nav__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 314px;
+        }
+
+        .nav__logo {
+            width: 136px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__logo a {
+            background: var(--gradient-brand);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            list-style: none;
+            padding: 0 4px;
+        }
+
+        .nav__item {
+            padding: 11px 12px;
+            border-radius: var(--radius-sm);
+            transition: background-color 0.2s ease;
+        }
+
+        .nav__item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav__link {
+            text-decoration: none;
+            color: var(--color-text-primary);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.223;
+        }
+
+        .nav__cta {
+            background: var(--gradient-brand);
+            color: var(--color-bg-white);
+            padding: 8px 24px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.243;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .nav__cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(140, 23, 63, 0.3);
+        }
+
+        /* Main Content */
+        .main {
+            padding-top: 80px;
+        }
+
+        /* Case Archive Section */
+        .case-archive {
+            padding: 180px 0 0;
+        }
+
+        .case-archive__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 72px;
+        }
+
+        .case-archive__header {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 8px;
+            width: 100%;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--filter-gap);
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: var(--color-bg-light-gray);
+            border-radius: var(--radius-sm);
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.2;
+            color: var(--color-text-black);
+            transition: all 0.2s ease;
+        }
+
+        .filter-tab--active {
+            background: var(--color-text-black);
+            color: var(--color-bg-white);
+        }
+
+        .filter-tab:hover {
+            background: var(--color-text-primary);
+            color: var(--color-bg-white);
+        }
+
+        .filter-text {
+            font-size: 14px;
+            color: var(--color-text-black);
+        }
+
+        /* Section Title */
+        .section-title {
+            font-family: var(--font-primary);
             font-weight: 500;
             font-size: 48px;
-            line-height: 115%;
-            letter-spacing: 0.96px;
-            text-align: right;
-            margin-bottom: 52px;
-            color: #0c0c0c;
+            line-height: 1.1;
+            text-align: center;
+            color: var(--color-text-primary);
+            margin-bottom: 12px;
         }
 
-        .content {
+        /* Project List */
+        .project-list {
             display: flex;
-            gap: 90px;
-            align-items: flex-end;
-        }
-
-        .img {
-            min-width: 471px;
-            width: 471px;
-            height: 602px;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .list {
-            width: 100%;
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 0;
-        }
-
-        .item {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            border-bottom: 1px solid #0c0c0c;
-            padding: 24px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .text {
+            flex-direction: column;
+            gap: 72px;
             width: 100%;
         }
 
-        .text--title {
-            font-weight: 500;
-            font-size: 24px;
-            letter-spacing: 0%;
-            margin-bottom: 4px;
-            color: #0c0c0c;
+        /* Project Card */
+        .project-card {
+            display: flex;
+            gap: var(--card-gap);
+            width: 100%;
         }
 
-        .text--desc {
-            max-width: 320px;
-            max-height: 0;
-            opacity: 0;
-            color: #585858;
+        .project-card__image {
+            flex: 1;
+            min-height: 650px;
+            border-radius: var(--radius-md);
             overflow: hidden;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 135%;
-            letter-spacing: 0.24px;
-            transition: max-height 0.4s ease, opacity 0.4s ease;
-        }
-
-        .number {
-            border: 1px solid #0C0C0C;
-            min-width: 48px;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
+            background: var(--color-bg-dark);
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
         }
 
-        .number span {
-            font-weight: 500;
-            font-size: 24px;
-            color: #0c0c0c;
-            transition: color 0.4s ease;
-        }
-
-        .item:hover .text--desc,
-        .item.active .text--desc {
-            max-height: 80px;
-            opacity: 1;
-        }
-
-        .item:hover .number,
-        .item.active .number {
-            border: 0;
-            background: linear-gradient(90deg, #220812 0%, #8C173F 100%);
-        }
-
-        .item:hover .number span,
-        .item.active .number span {
-            color: white;
-        }
-
-        /* Make first item active by default */
-        .item:first-child .text--desc {
-            max-height: 80px;
-            opacity: 1;
-        }
-
-        .item:first-child .number {
-            border: 0;
-            background: linear-gradient(90deg, #220812 0%, #8C173F 100%);
-        }
-
-        .item:first-child .number span {
-            color: white;
-        }
-
-        /* FAQ SECTION */
-        .frequently-asked {
-            margin-bottom: 160px;
-        }
-
-        .faq-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 36px;
-        }
-
-        .faq-wrapper {
-            display: flex;
-            gap: 90px;
-            align-items: flex-end;
-        }
-
-        .faq-img {
-            min-width: 471px;
-            width: 471px;
-            height: 602px;
-            flex-shrink: 0;
-        }
-
-        .faq-img-placeholder {
+        .project-card__image img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #0e0e0e 0%, #881741 67%, #cc202e 100%);
-            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .project-card__content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 28px;
+            background: var(--color-bg-white);
+            border-radius: var(--radius-md);
+            margin: 0;
+            width: 308px;
+        }
+
+        .project-card__logo {
+            width: 127px;
+            height: 34px;
+            background: var(--color-text-black);
+            border-radius: 4px;
+            margin-bottom: 17px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 18px;
+        }
+
+        .project-card__logo svg {
+            fill: var(--color-bg-white);
+        }
+
+        .project-card__title {
+            font-family: var(--font-primary);
             font-weight: 500;
+            font-size: 20px;
+            line-height: 1.3;
+            color: var(--color-bg-white);
+            margin-bottom: 17px;
         }
 
-        .faq-content {
+        .project-card__meta {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .project-card__meta-item {
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1.3;
+            color: var(--color-bg-white);
+        }
+
+        /* Alternate Layout */
+        .project-card--alt {
+            flex-direction: row-reverse;
+        }
+
+        .project-card--alt .project-card__image {
+            background: var(--color-bg-dark);
+        }
+
+        .project-card--bizdirect .project-card__image {
+            background: var(--color-bg-accent);
+        }
+
+        /* Split Layout Project Cards */
+        .project-card--split {
+            display: flex;
+            gap: var(--card-gap);
+            align-items: stretch;
+        }
+
+        .project-card--split .project-card__image {
             flex: 1;
+            background: var(--color-bg-dark);
         }
 
-        .faq-title {
+        .project-card--split .project-card__content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: var(--color-bg-white);
+            border-radius: var(--radius-md);
+            padding: 32px 24px 20px;
+            gap: 204px;
+        }
+
+        .project-card--split .project-card__header {
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+        }
+
+        .project-card--split .project-card__title {
+            color: var(--color-text-primary);
+        }
+
+        .project-card--split .project-card__meta-item {
+            color: var(--color-text-primary);
+        }
+
+        .project-card--split .project-card__description {
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.35;
+            color: var(--color-text-primary);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--filter-gap);
+            margin-top: 72px;
+        }
+
+        .pagination__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 24px;
+            border: 2px solid var(--color-text-gray);
+            border-radius: var(--radius-sm);
+            background: transparent;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-family: var(--font-primary);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.172;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            height: 40px;
+        }
+
+        .pagination__btn:hover {
+            background: var(--color-text-primary);
+            color: var(--color-bg-white);
+        }
+
+        .pagination__btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .pagination__current {
+            background: var(--color-bg-light-gray);
+            color: var(--color-text-black);
+            border: none;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 92px 12px 0;
+        }
+
+        .cta__card {
+            background: var(--gradient-brand);
+            border-radius: var(--radius-md);
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+            max-width: 996px;
+            margin: 0 auto;
+            height: 502px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(140, 23, 63, 0.3);
+        }
+
+        .cta__bg {
+            position: absolute;
+            top: -132px;
+            left: -266px;
+            width: 1528px;
+            height: 950px;
+            object-fit: cover;
+            opacity: 0.1;
+        }
+
+        .cta__content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .cta__title {
+            font-family: var(--font-primary);
             font-weight: 500;
             font-size: 48px;
             line-height: 1.15;
             letter-spacing: 0.96px;
+            color: var(--color-bg-white);
+            margin-bottom: 12px;
+        }
+
+        .cta__description {
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.3;
+            letter-spacing: 0.28px;
+            color: var(--color-bg-white);
             margin-bottom: 48px;
-            color: #0c0c0c;
         }
 
-        .faq-list {
-            width: 100%;
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 0;
+        .cta__button {
+            background: transparent;
+            color: var(--color-bg-white);
+            border: 1px solid var(--color-bg-white);
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.24;
+            letter-spacing: 0.56px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
         }
 
-        .faq-item {
+        .cta__button:hover {
+            background: var(--color-bg-white);
+            color: var(--color-text-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-text-primary);
+            color: var(--color-bg-white);
+            padding: 100px 12px 20px;
+        }
+
+        .footer__main {
+            display: grid;
+            grid-template-columns: 487px 1fr 1fr 290px;
+            gap: 48px;
+            margin-bottom: 120px;
+        }
+
+        .footer__about {
             display: flex;
-            gap: 10px;
-            align-items: flex-start;
-            border-bottom: 1px solid #ededed;
-            padding: 24px 0;
-            padding-left: 40px;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            position: relative;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .faq-text {
-            width: 100%;
-        }
-
-        .faq-text--title {
+        .footer__text {
+            font-family: var(--font-primary);
             font-weight: 500;
             font-size: 24px;
+            line-height: 1.23;
+            letter-spacing: 0.36px;
+        }
+
+        .footer__contact {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 12px;
+        }
+
+        .footer__contact-item {
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.2;
+            color: var(--color-text-gray);
+        }
+
+        .footer__section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer__section-title {
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .footer__links {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .footer__link {
+            color: var(--color-text-gray);
+            text-decoration: none;
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.2;
+            transition: color 0.2s ease;
+        }
+
+        .footer__link:hover {
+            color: var(--color-bg-white);
+        }
+
+        .footer__newsletter {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .footer__newsletter-header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer__newsletter-title {
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        .footer__newsletter-text {
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.2;
+            color: var(--color-text-gray);
+            width: 304px;
+        }
+
+        .footer__newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .footer__input {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: 12px 20px;
+            color: var(--color-bg-white);
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 14px;
             line-height: 1.1;
-            letter-spacing: 0%;
-            margin-bottom: 0px;
-            position: relative;
-            transition: margin-bottom 0.4s ease;
-            color: #0c0c0c;
         }
 
-        .faq-icon {
-            position: absolute;
-            left: -40px;
-            top: 0px;
-            width: 32px;
-            height: 32px;
+        .footer__input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
         }
 
-        .faq-icon svg {
-            position: absolute;
-            width: 32px;
-            height: 32px;
-            vertical-align: unset;
-            transition: transform 0.4s ease;
-        }
-
-        .faq-icon svg.gradient {
-            opacity: 0;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-
-        .faq-text--desc {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
+        .footer__submit {
+            background: var(--color-bg-white);
+            color: var(--color-text-primary);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: 12px 36px;
+            font-family: var(--font-primary);
             font-weight: 500;
             font-size: 16px;
-            line-height: 1.35;
-            letter-spacing: 0.24px;
-            transition: max-height 0.4s ease, opacity 0.4s ease;
-            color: #585858;
+            line-height: 1.24;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .faq-item:hover .faq-text--title,
-        .faq-item.expanded .faq-text--title {
-            margin-bottom: 8px;
+        .footer__submit:hover {
+            background: var(--color-text-gray);
         }
 
-        .faq-item:hover .faq-icon svg,
-        .faq-item.expanded .faq-icon svg {
-            transform: rotate(45deg);
+        .footer__disclaimer {
+            font-family: var(--font-secondary);
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1.2;
+            color: var(--color-bg-white);
         }
 
-        .faq-item:hover .faq-icon svg.gradient,
-        .faq-item.expanded .faq-icon svg.gradient {
-            transform: rotate(45deg);
-            opacity: 1;
+        .footer__bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 420px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .faq-item:hover .faq-text--desc,
-        .faq-item.expanded .faq-text--desc {
-            max-height: 150px;
-            opacity: 1;
+        .footer__logo {
+            width: 35px;
+            height: 28px;
+            background: var(--color-bg-white);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--color-text-primary);
         }
 
-        /* RESPONSIVE DESIGN */
+        .footer__legal {
+            display: flex;
+            gap: 41px;
+        }
+
+        .footer__legal-link {
+            color: var(--color-bg-white);
+            text-decoration: none;
+            font-family: var(--font-primary);
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav__container {
+                gap: 50px;
+            }
+
+            .project-card {
+                flex-direction: column;
+            }
+
+            .project-card--alt {
+                flex-direction: column;
+            }
+
+            .project-card--split {
+                flex-direction: column;
+            }
+
+            .project-card__content {
+                position: static;
+                width: 100%;
+            }
+
+            .footer__main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-                gap: 24px;
-                align-items: stretch;
-            }
-
-            .img {
-                width: 100%;
-                min-width: 100%;
-                height: 449px;
-            }
-
-            .faq-wrapper {
-                flex-direction: column;
-                gap: 60px;
-            }
-
-            .faq-img {
-                width: 100%;
-                min-width: 100%;
-                height: 448px;
-            }
-
-            .faq-title {
+            .section-title {
                 font-size: 36px;
             }
 
-            .frequently-asked {
-                margin-bottom: 120px;
+            .cta__title {
+                font-size: 36px;
             }
 
-            .faq-container {
-                padding: 0 20px;
+            .filter-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                gap: 20px;
             }
         }
 
-        @media (max-width: 575px) {
-            body {
-                padding: 120px 0;
-            }
-
-            .working-process {
-                margin-bottom: 120px;
-            }
-
-            .title {
-                font-weight: 500;
+        @media (max-width: 480px) {
+            .section-title {
                 font-size: 28px;
-                line-height: 115%;
-                letter-spacing: 0.56px;
-                margin-bottom: 28px;
-                text-align: left;
             }
 
-            .text--title {
-                font-size: 20px;
+            .pagination {
+                flex-wrap: wrap;
             }
+        }
 
-            .faq-text--title {
-                font-size: 20px;
-                line-height: 1.3;
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
+        }
 
-            .faq-item {
-                padding-left: 30px;
-            }
+        /* Focus styles */
+        *:focus {
+            outline: 2px solid var(--color-text-primary);
+            outline-offset: 2px;
+        }
 
-            .faq-icon {
-                left: -30px;
-            }
+        /* Hide elements for screen readers only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
     </style>
 </head>
-
 <body>
-    <!-- Working Process Section -->
-    <section class="working-process">
+<!-- Navigation -->
+<nav class="nav" role="navigation" aria-label="Main navigation" data-figma-name="Menu">
+    <div class="nav__container">
+        <div class="nav__logo">
+            <a href="#" aria-label="Mpire Agency - Home">Mpire</a>
+        </div>
+
+        <ul class="nav__menu">
+            <li class="nav__item">
+                <a href="#" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+                <a href="#" class="nav__link">Services</a>
+            </li>
+            <li class="nav__item">
+                <a href="#" class="nav__link">MVP Development</a>
+            </li>
+            <li class="nav__item">
+                <a href="#" class="nav__link">Case studies</a>
+            </li>
+            <li class="nav__item">
+                <a href="#" class="nav__link">Company</a>
+            </li>
+        </ul>
+
+        <a href="#contact" class="nav__cta">Contact us</a>
+    </div>
+</nav>
+
+<main class="main">
+    <!-- Case Archive Section -->
+    <section class="case-archive" data-figma-name="Case Archive">
         <div class="container">
-            <h2 class="title">Our working process</h2>
-            <div class="content">
-                <div class="img">
-                    <div style="width: 100%; height: 100%; background-color: #e5e5e5; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 18px; font-weight: 500;">
-                        Image Placeholder
+            <div class="case-archive__container">
+                <header class="case-archive__header">
+                    <!-- Filter Tabs -->
+                    <div class="filter-tabs" data-figma-name="Frame 117">
+                        <button class="filter-tab filter-tab--active" data-category="all">
+                            All projects
+                        </button>
+                        <button class="filter-tab" data-category="data">
+                            Data & Analytics
+                        </button>
+                        <span class="filter-text">,</span>
+                        <button class="filter-tab" data-category="software">
+                            Software Engineering
+                        </button>
+                        <span class="filter-text">,</span>
+                        <button class="filter-tab" data-category="mvp">
+                            MVP Development
+                        </button>
+                        <span class="filter-text">&</span>
+                        <button class="filter-tab" data-category="design">
+                            Creative Design
+                        </button>
                     </div>
+
+                    <!-- Section Title -->
+                    <h1 class="section-title">The best projects we worked on</h1>
+                </header>
+
+                <!-- Project List -->
+                <div class="project-list" data-figma-name="List">
+                    <!-- ONiO AS Project -->
+                    <article class="project-card" data-category="software data" data-figma-name="Frame 91">
+                        <div class="project-card__image" data-figma-name="Image Block">
+                            <!-- Placeholder for project image -->
+                            <svg width="100%" height="100%" viewBox="0 0 765 650" fill="none">
+                                <rect width="765" height="650" fill="#1A1A1A"/>
+                                <rect x="50" y="50" width="665" height="550" rx="16" fill="#333"/>
+                                <rect x="80" y="80" width="200" height="120" rx="8" fill="#71EA07"/>
+                                <rect x="300" y="80" width="200" height="120" rx="8" fill="#EEF5E4"/>
+                                <rect x="520" y="80" width="200" height="120" rx="8" fill="#FFF8BA"/>
+                                <text x="100" y="400" fill="white" font-family="Arial, sans-serif" font-size="16">Medical Technology Platform</text>
+                            </svg>
+
+                            <div class="project-card__content" data-figma-name="Frame 83">
+                                <div class="project-card__logo" data-figma-name="Frame">
+                                    <svg width="100" height="25" viewBox="0 0 100 25" fill="none">
+                                        <text x="8" y="18" fill="white" font-family="Arial, sans-serif" font-size="10">ONiO AS</text>
+                                    </svg>
+                                </div>
+                                <h2 class="project-card__title">Website & Smart Home Custom Development</h2>
+                                <div class="project-card__meta">
+                                    <div class="project-card__meta-item">Client: ONiO AS - Norway</div>
+                                    <div class="project-card__meta-item">Industry: Health Care Technology</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- GHN Project -->
+                    <article class="project-card--split" data-category="software mvp" data-figma-name="Frame 123">
+                        <div class="project-card__image" data-figma-name="Frame 122">
+                            <svg width="100%" height="100%" viewBox="0 0 765 590" fill="none">
+                                <rect width="765" height="590" fill="#1A1A1A"/>
+                                <rect x="50" y="50" width="665" height="490" rx="16" fill="#71EA07"/>
+                                <rect x="80" y="100" width="605" height="50" rx="8" fill="white"/>
+                                <rect x="80" y="170" width="200" height="150" rx="8" fill="rgba(255,255,255,0.9)"/>
+                                <rect x="300" y="170" width="200" height="150" rx="8" fill="rgba(255,255,255,0.8)"/>
+                                <rect x="520" y="170" width="165" height="150" rx="8" fill="rgba(255,255,255,0.7)"/>
+                                <text x="100" y="400" fill="white" font-family="Arial, sans-serif" font-size="16">Customer Service System</text>
+                            </svg>
+                        </div>
+                        <div class="project-card__content-wrapper" data-figma-name="Frame 90">
+                            <div class="project-card__header">
+                                <div class="project-card__logo">
+                                    <svg width="100" height="25" viewBox="0 0 100 25" fill="none">
+                                        <text x="8" y="18" fill="white" font-family="Arial, sans-serif" font-size="10">GHN</text>
+                                    </svg>
+                                </div>
+                                <h2 class="project-card__title">CS System</h2>
+                                <div class="project-card__meta">
+                                    <div class="project-card__meta-item">Client: GiaoHangNhanh - Viet Nam</div>
+                                    <div class="project-card__meta-item">Industry: Logistics & Transportation</div>
+                                </div>
+                            </div>
+                            <p class="project-card__description">Founded in 2012, GHN aims to become one of the most professional express service which tailor build for e-commerce. Before this project, GHN staffs only use excel files to manage their orders. As the company is growing fast, they need their Customer Service system upgraded.</p>
+                        </div>
+                    </article>
+
+                    <!-- BizDirect Asia Project -->
+                    <article class="project-card--split project-card--bizdirect" data-category="data software" data-figma-name="Frame 124">
+                        <div class="project-card__image" data-figma-name="Frame 122">
+                            <svg width="100%" height="100%" viewBox="0 0 765 590" fill="none">
+                                <rect width="765" height="590" fill="#426181"/>
+                                <rect x="50" y="50" width="665" height="490" rx="16" fill="rgba(255,255,255,0.1)"/>
+                                <circle cx="200" cy="200" r="50" fill="rgba(255,255,255,0.2)"/>
+                                <circle cx="400" cy="300" r="60" fill="rgba(255,255,255,0.15)"/>
+                                <circle cx="600" cy="250" r="40" fill="rgba(255,255,255,0.25)"/>
+                                <text x="100" y="450" fill="white" font-family="Arial, sans-serif" font-size="16">B2B CRM Platform</text>
+                            </svg>
+                        </div>
+                        <div class="project-card__content-wrapper" data-figma-name="Frame 90">
+                            <div class="project-card__header">
+                                <div class="project-card__logo">
+                                    <svg width="189" height="34" viewBox="0 0 189 34" fill="none">
+                                        <text x="8" y="22" fill="white" font-family="Arial, sans-serif" font-size="10">BizDirect Asia</text>
+                                    </svg>
+                                </div>
+                                <h2 class="project-card__title">BizDirect Asia CRM</h2>
+                                <div class="project-card__meta">
+                                    <div class="project-card__meta-item">Client: BizDirect - Vietnam</div>
+                                    <div class="project-card__meta-item">Industry: Online service</div>
+                                </div>
+                            </div>
+                            <p class="project-card__description">BizDirect is an B2B demand generation platform for ASEAN market that can help B2B marketers determine when to engage buyer, how to execute cross-channel campaigns most effectively or where to spend budget.</p>
+                        </div>
+                    </article>
+
+                    <!-- HongKy Electronics Project -->
+                    <article class="project-card--split" data-category="software mvp" data-figma-name="Frame 125">
+                        <div class="project-card__image" data-figma-name="Frame 122">
+                            <svg width="100%" height="100%" viewBox="0 0 765 590" fill="none">
+                                <rect width="765" height="590" fill="#1A1A1A"/>
+                                <rect x="50" y="100" width="665" height="400" rx="20" fill="#333"/>
+                                <rect x="200" y="200" width="365" height="200" rx="12" fill="#555"/>
+                                <circle cx="300" cy="300" r="30" fill="#71EA07" opacity="0.7"/>
+                                <circle cx="450" cy="300" r="25" fill="#FFF8BA" opacity="0.6"/>
+                                <text x="100" y="550" fill="white" font-family="Arial, sans-serif" font-size="16">Warranty Management System</text>
+                            </svg>
+                        </div>
+                        <div class="project-card__content-wrapper" data-figma-name="Frame 90">
+                            <div class="project-card__header">
+                                <div class="project-card__logo">
+                                    <svg width="71" height="71" viewBox="0 0 71 71" fill="none">
+                                        <rect width="71" height="71" fill="#000"/>
+                                        <text x="8" y="40" fill="white" font-family="Arial, sans-serif" font-size="8">HONG KY</text>
+                                    </svg>
+                                </div>
+                                <h2 class="project-card__title">HongKy Electronics Warranty Management System</h2>
+                                <div class="project-card__meta">
+                                    <div class="project-card__meta-item">Client: HONG KY CO., LTD - Viet Nam</div>
+                                    <div class="project-card__meta-item">Industry: Manufacturer of welding machine</div>
+                                </div>
+                            </div>
+                            <p class="project-card__description">HONG KY CO., LTDHong Ky Mechanical Company is the leading enterprise in the field of manufacturing mechanical products including welder, drill, electric motor, cutter, lathe and wood working machine of several types and functions.</p>
+                        </div>
+                    </article>
                 </div>
-                <ul class="list">
-                    <li class="item active">
-                        <div class="text">
-                            <div class="text--title">Discovery & Analysis</div>
-                            <div class="text--desc">We begin by understanding your unique challenges and goals to tailor our solution to your specific needs.</div>
-                        </div>
-                        <div class="number">
-                            <span>1</span>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="text">
-                            <div class="text--title">Strategic Planning</div>
-                            <div class="text--desc">We develop a comprehensive strategy that aligns with your business objectives and market requirements.</div>
-                        </div>
-                        <div class="number">
-                            <span>2</span>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="text">
-                            <div class="text--title">Design & Development</div>
-                            <div class="text--desc">Our team creates innovative solutions using cutting-edge technologies and best practices.</div>
-                        </div>
-                        <div class="number">
-                            <span>3</span>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="text">
-                            <div class="text--title">Implementation</div>
-                            <div class="text--desc">We carefully execute the planned solution ensuring quality and timely delivery.</div>
-                        </div>
-                        <div class="number">
-                            <span>4</span>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="text">
-                            <div class="text--title">Optimization</div>
-                            <div class="text--desc">We continuously monitor and improve performance to maximize efficiency and results.</div>
-                        </div>
-                        <div class="number">
-                            <span>5</span>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="text">
-                            <div class="text--title">Ongoing Support</div>
-                            <div class="text--desc">We provide continuous maintenance and support to ensure long-term success.</div>
-                        </div>
-                        <div class="number">
-                            <span>6</span>
-                        </div>
-                    </li>
-                </ul>
+
+                <!-- Pagination -->
+                <nav class="pagination" aria-label="Pagination Navigation" data-figma-name="Frame 141">
+                    <a href="#" class="pagination__btn" aria-label="Previous page">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </a>
+                    <span class="pagination__btn pagination__current" aria-current="page">Page 1 of 3</span>
+                    <a href="#" class="pagination__btn" aria-label="Next page">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </a>
+                </nav>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="frequently-asked">
-        <div class="faq-container">
-            <div class="faq-wrapper">
-                <div class="faq-img">
-                    <div class="faq-img-placeholder">
-                        FAQ Image Placeholder
-                    </div>
-                </div>
-                <div class="faq-content">
-                    <h2 class="faq-title">Frequently asked</h2>
-                    <ul class="faq-list">
-                        <li class="faq-item expanded">
-                            <div class="faq-text">
-                                <div class="faq-text--title">
-                                    Do you work with startups or only established businesses?
-                                    <div class="faq-icon">
-                                        <svg width='32' height='32' viewbox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M11.0064 22.131L10.9863 24.605L31.9644 24.6251L31.9644 22.131L11.0064 22.131ZM24.0197 31.001L25.7293 32.7106L35.0418 23.3982L33.3321 21.6885L24.0197 31.001ZM24.0197 15.7954L33.3321 25.1078L35.0418 23.3982L25.7293 14.0857L24.0197 15.7954Z' fill='#585858' />
-                                        </svg>
-                                        <svg class="gradient" width='32' height='32' viewbox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M11.0064 22.131L10.9863 24.605L31.9644 24.6251L31.9644 22.131L11.0064 22.131ZM24.0197 31.001L25.7293 32.7106L35.0418 23.3982L33.3321 21.6885L24.0197 31.001ZM24.0197 15.7954L33.3321 25.1078L35.0418 23.3982L25.7293 14.0857L24.0197 15.7954Z' fill='url(#paint0_linear_faq)' />
-                                            <defs>
-                                                <linearGradient id='paint0_linear_faq' x1='7.19043' y1='17.0855' x2='25.0535' y2='17.0855' gradientUnits='userSpaceOnUse'>
-                                                    <stop stop-color='#220812' />
-                                                    <stop offset='1' stop-color='#8C173F' />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="faq-text--desc">
-                                    We work with businesses of all sizes, from startups launching their first store to established brands looking to scale and optimize their digital presence.
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="faq-item">
-                            <div class="faq-text">
-                                <div class="faq-text--title">
-                                    Do you offer ongoing support and maintenance?
-                                    <div class="faq-icon">
-                                        <svg width='32' height='32' viewbox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M11.0064 22.131L10.9863 24.605L31.9644 24.6251L31.9644 22.131L11.0064 22.131ZM24.0197 31.001L25.7293 32.7106L35.0418 23.3982L33.3321 21.6885L24.0197 31.001ZM24.0197 15.7954L33.3321 25.1078L35.0418 23.3982L25.7293 14.0857L24.0197 15.7954Z' fill='#585858' />
-                                        </svg>
-                                        <svg class="gradient" width='32' height='32' viewbox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M11.0064 22.131L10.9863 24.605L31.9644 24.6251L31.9644 22.131L11.0064 22.131ZM24.0197 31.001L25.7293 32.7106L35.0418 23.3982L33.3321 21.6885L24.0197 31.001ZM24.0197 15.7954L33.3321 25.1078L35.0418 23.3982L25.7293 14.0857L24.0197 15.7954Z' fill='url(#paint1_linear_faq)' />
-                                            <defs>
-                                                <linearGradient id='paint1_linear_faq' x1='7.19043' y1='17.0855' x2='25.0535' y2='17.0855' gradientUnits='userSpaceOnUse'>
-                                                    <stop stop-color='#220812' />
-                                                    <stop offset='1' stop-color='#8C173F' />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="faq-text--desc">
-                                    Yes, we provide comprehensive ongoing support and maintenance services to ensure your digital solutions continue to perform optimally after launch.
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="faq-item">
-                            <div class="faq-text">
-                                <div class="faq-text--title">
-                                    How can I get a quote for my project?
-                                    <div class="faq-icon">
-                                        <svg width='32' height='32' viewbox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M11.0064 22.131L10.9863 24.605L31.9644 24.6251L31.9644 22.131L11.0064 22.131ZM24.0197 31.001L25.7293 32.7106L35.0418 23.3982L33.3321 21.6885L24.0197 31.001ZM24.0197 15.7954L33.3321 25.1078L35.0418 23.3982L25.7293 14.0857L24.0197 15.7954Z' fill='#585858' />
-                                        </svg>
-                                        <svg class="gradient" width='32' height='32' viewbox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M11.0064 22.131L10.9863 24.605L31.9644 24.6251L31.9644 22.131L11.0064 22.131ZM24.0197 31.001L25.7293 32.7106L35.0418 23.3982L33.3321 21.6885L24.0197 31.001ZM24.0197 15.7954L33.3321 25.1078L35.0418 23.3982L25.7293 14.0857L24.0197 15.7954Z' fill='url(#paint2_linear_faq)' />
-                                            <defs>
-                                                <linearGradient id='paint2_linear_faq' x1='7.19043' y1='17.0855' x2='25.0535' y2='17.0855' gradientUnits='userSpaceOnUse'>
-                                                    <stop stop-color='#220812' />
-                                                    <stop offset='1' stop-color='#8C173F' />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="faq-text--desc">
-                                    Simply contact us through our website or schedule a consultation. We'll discuss your project requirements and provide a detailed quote tailored to your needs.
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="faq-item">
-                            <div class="faq-text">
-                                <div class="faq-text--title">
-                                    How long does a typical web development project take?
-                                    <div class="faq-icon">
-                                        <svg width='32' height='32' viewbox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M11.0064 22.131L10.9863 24.605L31.9644 24.6251L31.9644 22.131L11.0064 22.131ZM24.0197 31.001L25.7293 32.7106L35.0418 23.3982L33.3321 21.6885L24.0197 31.001ZM24.0197 15.7954L33.3321 25.1078L35.0418 23.3982L25.7293 14.0857L24.0197 15.7954Z' fill='#585858' />
-                                        </svg>
-                                        <svg class="gradient" width='32' height='32' viewbox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M11.0064 22.131L10.9863 24.605L31.9644 24.6251L31.9644 22.131L11.0064 22.131ZM24.0197 31.001L25.7293 32.7106L35.0418 23.3982L33.3321 21.6885L24.0197 31.001ZM24.0197 15.7954L33.3321 25.1078L35.0418 23.3982L25.7293 14.0857L24.0197 15.7954Z' fill='url(#paint3_linear_faq)' />
-                                            <defs>
-                                                <linearGradient id='paint3_linear_faq' x1='7.19043' y1='17.0855' x2='25.0535' y2='17.0855' gradientUnits='userSpaceOnUse'>
-                                                    <stop stop-color='#220812' />
-                                                    <stop offset='1' stop-color='#8C173F' />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="faq-text--desc">
-                                    Project timelines vary depending on complexity, but typically range from 4-12 weeks. We'll provide a detailed timeline during the planning phase based on your specific requirements.
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="faq-item">
-                            <div class="faq-text">
-                                <div class="faq-text--title">
-                                    What services does Mpire offer?
-                                    <div class="faq-icon">
-                                        <svg width='32' height='32' viewbox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M11.0064 22.131L10.9863 24.605L31.9644 24.6251L31.9644 22.131L11.0064 22.131ZM24.0197 31.001L25.7293 32.7106L35.0418 23.3982L33.3321 21.6885L24.0197 31.001ZM24.0197 15.7954L33.3321 25.1078L35.0418 23.3982L25.7293 14.0857L24.0197 15.7954Z' fill='#585858' />
-                                        </svg>
-                                        <svg class="gradient" width='32' height='32' viewbox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M11.0064 22.131L10.9863 24.605L31.9644 24.6251L31.9644 22.131L11.0064 22.131ZM24.0197 31.001L25.7293 32.7106L35.0418 23.3982L33.3321 21.6885L24.0197 31.001ZM24.0197 15.7954L33.3321 25.1078L35.0418 23.3982L25.7293 14.0857L24.0197 15.7954Z' fill='url(#paint4_linear_faq)' />
-                                            <defs>
-                                                <linearGradient id='paint4_linear_faq' x1='7.19043' y1='17.0855' x2='25.0535' y2='17.0855' gradientUnits='userSpaceOnUse'>
-                                                    <stop stop-color='#220812' />
-                                                    <stop offset='1' stop-color='#8C173F' />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="faq-text--desc">
-                                    We offer comprehensive digital solutions including web development, e-commerce platforms, mobile applications, digital marketing, and brand strategy consulting.
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+    <!-- CTA Section -->
+    <section class="cta" data-figma-name="Banner CTA">
+        <div class="cta__card">
+            <svg class="cta__bg" width="1528" height="950" viewBox="0 0 1528 950" fill="none">
+                <rect width="1528" height="950" fill="url(#gradientBg)"/>
+                <defs>
+                    <linearGradient id="gradientBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:0.3"/>
+                        <stop offset="50%" style="stop-color:#4ECDC4;stop-opacity:0.2"/>
+                        <stop offset="100%" style="stop-color:#45B7D1;stop-opacity:0.3"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="cta__content">
+                <h2 class="cta__title">Ready to supercharge your software projects?</h2>
+                <p class="cta__description">Are you ready to bring your project to life?<br>Reach out and share your vision with us and let's work together to make it a success.</p>
+                <a href="#contact" class="cta__button">talk to us</a>
             </div>
         </div>
     </section>
+</main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Working Process functionality
-            const workingProcessItems = document.querySelectorAll('.working-process .item');
+<!-- Footer -->
+<footer class="footer" data-figma-name="Footer">
+    <div class="container">
+        <div class="footer__main">
+            <div class="footer__about">
+                <p class="footer__text">We fundamentally believe that creativity fused with technology can make complex ideas more obvious and products more fun. Our calling is to bring grand ideas to life and help others do the same.</p>
+                <div class="footer__contact">
+                    <div class="footer__contact-item">1st Floor - FCentral 16A Le Hong Phong St., Dist. 10, HCMC, Vietnam</div>
+                    <div class="footer__contact-item">tringuyen@mpire.vn</div>
+                    <div class="footer__contact-item">+84 902 340 284</div>
+                </div>
+            </div>
 
-            workingProcessItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    workingProcessItems.forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
+            <div class="footer__section">
+                <h3 class="footer__section-title">Services</h3>
+                <nav class="footer__links">
+                    <a href="#" class="footer__link">Software Engineering</a>
+                    <a href="#" class="footer__link">Creative Design</a>
+                    <a href="#" class="footer__link">Data Analytics</a>
+                    <a href="#" class="footer__link">MVP Development</a>
+                    <a href="#" class="footer__link">Software Custom Development</a>
+                    <a href="#" class="footer__link">Cloud Migration</a>
+                </nav>
+            </div>
+
+            <div class="footer__section">
+                <h3 class="footer__section-title">Company</h3>
+                <nav class="footer__links">
+                    <a href="#" class="footer__link">Careers</a>
+                    <a href="#" class="footer__link">Contact us</a>
+                    <a href="#" class="footer__link">Blogs</a>
+                    <a href="#" class="footer__link">Life of Mpire</a>
+                </nav>
+            </div>
+
+            <div class="footer__newsletter">
+                <div class="footer__newsletter-header">
+                    <h3 class="footer__newsletter-title">Keep up to date</h3>
+                    <p class="footer__newsletter-text">Subscribe, get our discount and latest updates</p>
+                </div>
+                <form class="footer__newsletter-form" id="newsletterForm">
+                    <input type="email" class="footer__input" placeholder="Your email address" required aria-label="Email address">
+                    <button type="submit" class="footer__submit">Submit</button>
+                    <p class="footer__disclaimer">By clicking Subscribe, you agreed with our terms and conditions</p>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="footer__logo">M</div>
+            <div class="footer__legal">
+                <a href="#" class="footer__legal-link">Privacy Policy</a>
+                <a href="#" class="footer__legal-link">Cookies</a>
+                <span class="footer__legal-link">© 2025 Mpire Agency. All Rights Reserved</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    (function() {
+        'use strict';
+
+        // Initialize application
+        function init() {
+            setupFilterTabs();
+            setupPagination();
+            setupNavigation();
+            setupNewsletterForm();
+            setupAccessibility();
+        }
+
+        // Filter tabs functionality
+        function setupFilterTabs() {
+            const tabs = document.querySelectorAll('.filter-tab');
+            const projects = document.querySelectorAll('.project-card, .project-card--split');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('filter-tab--active'));
+                    // Add active class to clicked tab
+                    tab.classList.add('filter-tab--active');
+
+                    // Filter projects based on category
+                    const category = tab.dataset.category;
+                    filterProjects(category);
+                });
+
+                tab.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        tab.click();
+                    }
                 });
             });
 
-            // FAQ functionality
-            const faqItems = document.querySelectorAll('.faq-item');
+            function filterProjects(category) {
+                projects.forEach(project => {
+                    const projectCategories = project.dataset.category ? project.dataset.category.split(' ') : [];
+                    if (category === 'all' || projectCategories.includes(category)) {
+                        project.style.display = 'flex';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            }
+        }
 
-            faqItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('expanded');
+        // Pagination functionality
+        function setupPagination() {
+            const prevBtn = document.querySelector('.pagination__btn[aria-label="Previous page"]');
+            const nextBtn = document.querySelector('.pagination__btn[aria-label="Next page"]');
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Add pagination logic here
+                    console.log('Previous page clicked');
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Add pagination logic here
+                    console.log('Next page clicked');
+                });
+            }
+        }
+
+        // Navigation functionality
+        function setupNavigation() {
+            const nav = document.querySelector('.nav');
+            const navLinks = document.querySelectorAll('.nav__link, .nav__cta');
+
+            // Smooth scroll for anchor links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#') && href !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
                         }
-                    });
-
-                    item.classList.toggle('expanded');
+                    }
                 });
             });
-        });
-    </script>
-</body>
 
+            // Change nav appearance on scroll
+            let lastScrollY = 0;
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > 100) {
+                    nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                    nav.style.backdropFilter = 'blur(12px)';
+                } else {
+                    nav.style.background = 'rgba(255, 255, 255, 0.88)';
+                    nav.style.backdropFilter = 'blur(9px)';
+                }
+
+                lastScrollY = currentScrollY;
+            }, { passive: true });
+        }
+
+        // Newsletter form
+        function setupNewsletterForm() {
+            const form = document.getElementById('newsletterForm');
+            if (!form) return;
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = form.querySelector('input[type="email"]').value;
+
+                // Simulate form submission
+                if (email) {
+                    const submitBtn = form.querySelector('.footer__submit');
+                    const originalText = submitBtn.textContent;
+
+                    submitBtn.textContent = 'Submitting...';
+                    submitBtn.disabled = true;
+
+                    setTimeout(() => {
+                        submitBtn.textContent = 'Subscribed!';
+                        setTimeout(() => {
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                            form.reset();
+                        }, 2000);
+                    }, 1000);
+                }
+            });
+        }
+
+        // Accessibility enhancements
+        function setupAccessibility() {
+            // Add skip link
+            const skipLink = document.createElement('a');
+            skipLink.href = '#main';
+            skipLink.textContent = 'Skip to main content';
+            skipLink.className = 'sr-only';
+            skipLink.style.position = 'absolute';
+            skipLink.style.top = '10px';
+            skipLink.style.left = '10px';
+            skipLink.style.zIndex = '9999';
+            skipLink.style.background = '#000';
+            skipLink.style.color = '#fff';
+            skipLink.style.padding = '8px 16px';
+            skipLink.style.textDecoration = 'none';
+            skipLink.addEventListener('focus', () => {
+                skipLink.classList.remove('sr-only');
+            });
+            skipLink.addEventListener('blur', () => {
+                skipLink.classList.add('sr-only');
+            });
+            document.body.insertBefore(skipLink, document.body.firstChild);
+
+            // Add main id
+            const main = document.querySelector('.main');
+            if (main) {
+                main.id = 'main';
+            }
+
+            // Make filter tabs focusable
+            const tabs = document.querySelectorAll('.filter-tab');
+            tabs.forEach(tab => {
+                tab.setAttribute('tabindex', '0');
+                tab.setAttribute('role', 'button');
+            });
+        }
+
+        // Error handling
+        window.addEventListener('error', (e) => {
+            console.error('Application error:', e.error);
+        });
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+
+    })();
+</script>
+</body>
 </html>
